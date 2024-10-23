@@ -8,7 +8,7 @@ const Home = () => {
     const navigate = useNavigate();
     const users = useSelector((state) => state.users.userList);  // 'useSelector' is used to get the state of the store
     const dispatch = useDispatch();  // 'useDispatch' is used to update the state of the store(deleting data etc.)
-
+    
 
     return (
         <div className='container mt-40 mx-40 font-mono'>
@@ -40,9 +40,7 @@ const Home = () => {
                                     Edit
                                     </Link>
                                     <button className="text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-6 py-2 mx-5 my-2 dark:bg-red-600 dark:hover:bg-red-700 focus:ring-red-700 dark:focus:ring-red-700" 
-                                    onClick={() => {
-                                        dispatch(deleteUser({id: user.id}));
-                                    }}>
+                                    onClick={()=> dispatch(deleteUser(user.id))}>
                                         Delete
                                     </button>
                                 </td>
@@ -58,4 +56,3 @@ const Home = () => {
 };
 
 export default Home;
-
