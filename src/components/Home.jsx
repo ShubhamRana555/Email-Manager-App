@@ -8,13 +8,6 @@ const Home = () => {
     const navigate = useNavigate();
     const users = useSelector((state) => state.users.userList);  // 'useSelector' is used to get the state of the store
     const dispatch = useDispatch();  // 'useDispatch' is used to update the state of the store(deleting data etc.)
-    const deleteData = ({id}) => {
-        dispatch(deleteUser());
-        navigate(0)
-        
-   }
-
-
 
     return (
         <div className='container mt-40 mx-40 font-mono'>
